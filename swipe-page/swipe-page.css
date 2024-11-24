@@ -1,8 +1,9 @@
 /* Set the background image sources */
 #page1 { background-image: url("img/page1.jpg"); }
-#page2 { background-image: url("pdf/page2.pdf"); }
-#page3 { background-image: url("pdf/page3.pdf"); }
-#page4 { background-image: url("pdf/page4.pdf"); }
+#page2 { background-image: url("img/page2.jpg"); }
+#page3 { background-image: url("img/page3.jpg"); }
+#page4 { background-image: url("img/page4.jpg"); }
+#page5 { background-image: url("img/page5.jpg"); }
 /* Background settings */
 .demo-page {
 background-size: cover;
