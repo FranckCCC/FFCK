@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tuto Images et PDFs</title>
+</head>
+<body>
+    <h1>Tutoriel Images et PDFs</h1>
+    <img src="https://drive.google.com/uc?id=ton-id-fichier" alt="Image Tutoriel">
+    <p><a href="https://drive.google.com/uc?id=ton-id-fichier-pdf" target="_blank">Télécharger le PDF du tutoriel</a></p>
+</body>
+</html>
