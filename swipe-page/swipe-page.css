@@ -1,10 +1,8 @@
 /* Set the background image sources */
-#page1 { background-image: url("img/test.jpg"); }
-#page2 { background-image: url("img/test.jpg"); }
-#page3 { background-image: url("img/test.jpg"); }
-#page4 { background-image: url("img/test.jpg"); }
-#page4 { background-image: url("img/test.jpg"); }
-#page6 { background-image: url("img/test.jpg"); }
+#page1 { background-image: url("pdf/page1.pdf"); }
+#page2 { background-image: url("pdf/page2.pdf"); }
+#page3 { background-image: url("pdf/page3.pdf"); }
+#page4 { background-image: url("pdf/page4.pdf"); }
 /* Background settings */
 .demo-page {
 background-size: cover;
