@@ -3,7 +3,9 @@
 #page2 { background-image: url("img/page2.jpg"); }
 #page3 { background-image: url("img/page3.jpg"); }
 #page4 { background-image: url("img/page4.jpg"); }
-#page5 { background-image: url("img/page5.jpg"); }
+#page5 { background-image: url("img/page5.jpg"); }*
+#page6 { background-image: url("img/page6.jpg"); }
+#page7 { background-image: url("img/page7.jpg"); }
 /* Background settings */
 .demo-page {
 background-size: cover;
