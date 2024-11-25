@@ -1,33 +1,35 @@
 /* Set the background image sources */
-#page1 { background-image: url("img/page1.jpg"); }
-#page2 { background-image: url("img/page2.jpg"); }
-#page3 { background-image: url("img/page3.jpg"); }
-#page4 { background-image: url("img/page4.jpg"); }
-#page5 { background-image: url("img/page5.jpg"); }*
-#page6 { background-image: url("img/page6.jpg"); }
-#page7 { background-image: url("img/page7.jpg"); }
+#page1b { background-image: url("img/page1b.jpg"); }
+#page2b { background-image: url("img/page2b.jpg"); }
+
+
 /* Background settings */
 .demo-page {
-background-size: cover;
-background-position: center center;
-background-repeat: no-repeat;
+    background-size: cover; /* L'image couvre tout l'élément */
+    background-position: center center; /* Centrage de l'image */
+    background-repeat: no-repeat; /* Pas de répétition de l'image */
+    height: 100vh; /* Assure que chaque page couvre toute la hauteur de l'écran */
+    width: 100vw; /* Assure que chaque page couvre toute la largeur de l'écran */
 }
+
 /* Transparent footer */
 .demo-page .ui-footer {
-background: none;
-border: none;
-bottom: 0;
+    background: none;
+    border: none;
+    bottom: 0;
 }
-/* The footer won't have a height because there are only two absolute positioned elements in it.
-So we position the buttons from the bottom. */
+
+/* Positionnement des boutons du footer */
 .control.ui-btn-left,
 .trivia-btn.ui-btn-right {
-top: auto;
-bottom: 7px;
-margin: 0;
+    top: auto;
+    bottom: 7px;
+    margin: 0;
 }
+
 /* Custom styling for the trivia source */
 small {
-font-size: .75em;
-color: #666;
+    font-size: 0.75em;
+    color: #666;
+    
 }
