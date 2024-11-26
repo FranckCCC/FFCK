@@ -42,6 +42,18 @@
             background-color: #d32f2f;
         }
 
+        .small-button {
+            font-size: 1em;
+            padding: 10px;
+            width: 150px;
+            background-color: #008CBA;
+            margin-top: 10px;
+        }
+
+        .small-button:hover {
+            background-color: #007bb5;
+        }
+
         .hidden {
             display: none;
         }
@@ -50,13 +62,16 @@
 <body>
 
     <!-- Boutons pour tester le Bip -->
-    <button id="bipOkButton" class="button">BIP OK</button>
-    <button id="pasDeBipButton" class="button red-button">PAS DE BIP</button>
+    <div id="initialOptions">
+        <button id="bipOkButton" class="button">BIP OK</button>
+        <button id="pasDeBipButton" class="button red-button">PAS DE BIP</button>
+    </div>
 
     <!-- Boutons pour tester le départ ou l'arrivée, cachés initialement -->
     <div id="testOptions" class="hidden">
         <button id="testDepartButton" class="button">TEST DEPART</button>
         <button id="testArriveeButton" class="button red-button">TEST ARRIVEE</button>
+        <button id="backButton" class="small-button">Retour</button>
     </div>
 
     <script>
@@ -64,14 +79,15 @@
         const bipOkButton = document.getElementById('bipOkButton');
         const pasDeBipButton = document.getElementById('pasDeBipButton');
         const testOptions = document.getElementById('testOptions');
+        const initialOptions = document.getElementById('initialOptions');
         const testDepartButton = document.getElementById('testDepartButton');
         const testArriveeButton = document.getElementById('testArriveeButton');
+        const backButton = document.getElementById('backButton');
 
         // Action pour le bouton "PAS DE BIP"
         pasDeBipButton.addEventListener('click', () => {
             testOptions.classList.remove('hidden');
-            bipOkButton.classList.add('hidden');
-            pasDeBipButton.classList.add('hidden');
+            initialOptions.classList.add('hidden');
         });
 
         // Action pour le bouton "TEST DEPART"
@@ -82,6 +98,12 @@
         // Action pour le bouton "TEST ARRIVEE"
         testArriveeButton.addEventListener('click', () => {
             window.location.href = 'https://franckccc.github.io/FFCK/swipe-page/page2b.html';
+        });
+
+        // Action pour le bouton "Retour"
+        backButton.addEventListener('click', () => {
+            testOptions.classList.add('hidden');
+            initialOptions.classList.remove('hidden');
         });
     </script>
 
