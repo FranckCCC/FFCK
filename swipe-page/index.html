@@ -11,31 +11,30 @@
     <script src="../js/jquery.js"></script>
     <script src="../js/jquery.mobile-1.4.5.min.js"></script>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            background-color: #f5f5f5;
-            margin: 60;
+        html, body {
+            height: 100%;
+            margin: 0;
             padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+        }
+
+        #parametrage-depannage {
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
+            text-align: center;
         }
 
         .icon-container {
             display: flex;
             flex-direction: column;
-            justify-content: center;
+            gap: 50px;
             align-items: center;
-            gap: 30px;
-            width: 100%;
         }
 
         .icon-link {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
             text-decoration: none;
             color: #007bb5;
             transition: color 0.3s;
@@ -59,14 +58,14 @@
 
 <div data-role="page" id="parametrage-depannage">
 
-    <div id="header" data-role="header" data-id="header" data-position="fixed" data-fullscreen="true" data-tap-toggle="false">
+    <div data-role="header" data-id="header" data-position="fixed" data-fullscreen="true" data-tap-toggle="false">
         <h1>Paramétrage et Dépannage</h1>
     </div><!-- /header -->
 
-    <div role="main" class="ui-content">
+    <div role="main" class="ui-content" style="padding: 0;">
         <div class="icon-container">
             <!-- Icône Paramétrage -->
-            <a href="page1c.html" class="icon-link">
+            <a href="depann.html" class="icon-link">
                 <i class="fas fa-cogs icon"></i>
                 <span class="label">Paramétrage</span>
             </a>
@@ -78,13 +77,6 @@
             </a>
         </div>
     </div><!-- /content -->
-
-    <div id="footer" data-id="footer" data-position="fixed" data-fullscreen="true" data-tap-toggle="false">
-        <div data-role="controlgroup" class="control ui-btn-left" data-type="horizontal" data-mini="true">
-            <a href="#" class="prev ui-btn ui-btn-icon-notext ui-icon-carat-l">Previous</a>
-            <a href="#" class="next ui-btn ui-btn-icon-notext ui-icon-carat-r">Next</a>
-        </div>
-    </div><!-- /footer -->
 
 </div><!-- /page -->
 
