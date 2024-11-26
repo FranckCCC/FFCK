@@ -1,91 +1,169 @@
 <!DOCTYPE html>
 <html lang="fr">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Paramétrage et Dépannage</title>
-    <!-- Lien vers la bibliothèque FontAwesome pour les icônes -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="stylesheet" href="../css/themes/default/jquery.mobile-1.4.5.min.css?v=1.0">
-    <link rel="stylesheet" href="../_assets/css/jqm-demos.css?v=1.0">
-    <script src="../js/jquery.js"></script>
-    <script src="../js/jquery.mobile-1.4.5.min.js"></script>
-    <script src="swipe-page.js"></script>
+    <title>Tester le Bip</title>
+
     <style>
-        html, body {
-            height: 100%;
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f5f5f5;
             margin: 0;
             padding: 0;
-            font-family: Arial, sans-serif;
-            background-color: #f5f5f5;
-            overflow: hidden; /* Empêche le défilement */
-        }
-
-        #parametrage-depannage {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            text-align: center;
-        }
-
-        .icon-container {
-            display: flex;
-            gap: 50px;
-            align-items: center;
-        }
-
-        .icon-link {
-            text-decoration: none;
-            color: #007bb5;
-            transition: color 0.3s;
             display: flex;
             flex-direction: column;
-            align-items: center;
+            justify-content: center;
+            height: 100vh;
         }
 
-        .icon-link:hover {
-            color: #005f8c;
+        .button {
+            font-size: 2em;
+            padding: 20px;
+            margin: 20px;
+            width: 80%;
+            max-width: 400px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
         }
 
-        .icon {
-            font-size: 5em;
-            margin-bottom: 10px; /* Espace entre l'icône et le texte */
+        .button:hover {
+            background-color: #45a049;
         }
 
-        .label {
-            font-size: 1.5em;
+        .red-button {
+            background-color: #f44336;
+        }
+
+        .red-button:hover {
+            background-color: #d32f2f;
+        }
+
+        .small-button {
+            font-size: 1em;
+            padding: 10px;
+            width: 150px;
+            background-color: #008CBA;
             margin-top: 10px;
+        }
+
+        .small-button:hover {
+            background-color: #007bb5;
+        }
+
+        .icon-button {
+            border: none;
+            background: none;
+            cursor: pointer;
+            font-size: 3em;
+            margin: 20px;
+        }
+
+        .hidden {
+            display: none;
         }
     </style>
 </head>
-
 <body>
 
-    <!-- Page unique avec deux icônes -->
-    <div data-role="page" id="parametrage-depannage" class="demo-page">
-        <div data-role="header" data-id="header" data-position="fixed" data-fullscreen="true" data-tap-toggle="false">
-            <h1>Paramétrage et Dépannage</h1>
-        </div><!-- /header -->
+    <!-- Boutons pour tester le Bip -->
+    <div id="initialOptions">
+        <button id="bipOkButton" class="button">BIP OK</button>
+        <button id="pasDeBipButton" class="button red-button">PAS DE BIP</button>
+        <button id="depannageButton" class="button">Dépannage</button>
+    </div>
 
-        <div role="main" class="ui-content">
-            <div class="icon-container">
-                <!-- Icône Paramétrage -->
-                <a href="page1.html" class="icon-link">
-                    <i class="fas fa-cogs icon"></i>
-                    <span class="label">Paramétrage</span>
-                </a>
+    <!-- Boutons pour le choix du dépannage -->
+    <div id="depannageOptions" class="hidden">
+        <button id="bipOkIcon" class="icon-button">&#128266;</button>
+        <button id="pasDeBipIcon" class="icon-button">&#128263;</button>
+        <button id="backButtonDepannage" class="small-button">Retour</button>
+    </div>
 
-                <!-- Icône Dépannage -->
-                <a href="testbip.html" class="icon-link">
-                    <i class="fas fa-tools icon"></i>
-                    <span class="label">Dépannage</span>
-                </a>
-            </div>
-        </div><!-- /content -->
-    </div><!-- /page -->
+    <!-- Boutons pour tester le départ ou l'arrivée, cachés initialement -->
+    <div id="testOptions" class="hidden">
+        <button id="testDepartButton" class="icon-button">&#127937; Départ</button>
+        <button id="testArriveeButton" class="icon-button red-button">&#127937; Arrivée</button>
+        <button id="backButtonTest" class="small-button">Retour</button>
+    </div>
 
+    <script>
+        window.addEventListener('load', () => {
+            // Réinitialiser l'affichage de la page au chargement
+            const initialOptions = document.getElementById('initialOptions');
+            const depannageOptions = document.getElementById('depannageOptions');
+            const testOptions = document.getElementById('testOptions');
+            
+            depannageOptions.classList.add('hidden');
+            testOptions.classList.add('hidden');
+            initialOptions.classList.remove('hidden');
+    
+            // Sélectionner les boutons
+            const bipOkButton = document.getElementById('bipOkButton');
+            const pasDeBipButton = document.getElementById('pasDeBipButton');
+            const depannageButton = document.getElementById('depannageButton');
+            const bipOkIcon = document.getElementById('bipOkIcon');
+            const pasDeBipIcon = document.getElementById('pasDeBipIcon');
+            const testDepartButton = document.getElementById('testDepartButton');
+            const testArriveeButton = document.getElementById('testArriveeButton');
+            const backButtonDepannage = document.getElementById('backButtonDepannage');
+            const backButtonTest = document.getElementById('backButtonTest');
+    
+            // Action pour le bouton "BIP OK"
+            bipOkButton.addEventListener('click', () => {
+                window.location.href = 'https://franckccc.github.io/FFCK/swipe-page/page1c.html';
+            });
+    
+            // Action pour le bouton "PAS DE BIP"
+            pasDeBipButton.addEventListener('click', () => {
+                testOptions.classList.remove('hidden');
+                initialOptions.classList.add('hidden');
+            });
+    
+            // Action pour le bouton "Dépannage"
+            depannageButton.addEventListener('click', () => {
+                depannageOptions.classList.remove('hidden');
+                initialOptions.classList.add('hidden');
+            });
+    
+            // Action pour l'icone "BIP OK" dans le dépannage
+            bipOkIcon.addEventListener('click', () => {
+                window.location.href = 'https://franckccc.github.io/FFCK/swipe-page/page1c.html';
+            });
+    
+            // Action pour l'icone "PAS DE BIP" dans le dépannage
+            pasDeBipIcon.addEventListener('click', () => {
+                testOptions.classList.remove('hidden');
+                depannageOptions.classList.add('hidden');
+            });
+    
+            // Action pour le bouton "TEST DEPART"
+            testDepartButton.addEventListener('click', () => {
+                window.location.href = 'https://franckccc.github.io/FFCK/swipe-page/page1b.html';
+            });
+    
+            // Action pour le bouton "TEST ARRIVEE"
+            testArriveeButton.addEventListener('click', () => {
+                window.location.href = 'https://franckccc.github.io/FFCK/swipe-page/page2b.html';
+            });
+    
+            // Action pour le bouton "Retour" du dépannage
+            backButtonDepannage.addEventListener('click', () => {
+                depannageOptions.classList.add('hidden');
+                initialOptions.classList.remove('hidden');
+            });
+    
+            // Action pour le bouton "Retour" des tests
+            backButtonTest.addEventListener('click', () => {
+                testOptions.classList.add('hidden');
+                initialOptions.classList.remove('hidden');
+            });
+        });
+    </script>
+    
 </body>
-
 </html>
