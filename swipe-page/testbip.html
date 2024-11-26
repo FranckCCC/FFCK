@@ -76,17 +76,7 @@
     </div>
 
     <script>
-        function reloadCSS() {
-            const links = document.querySelectorAll('link[rel="stylesheet"]');
-            links.forEach(link => {
-                const href = link.getAttribute('href');
-                link.setAttribute('href', href.split('?')[0] + '?v=' + new Date().getTime());
-            });
-        }
-    
         window.addEventListener('load', () => {
-            reloadCSS(); // Recharger les feuilles de style pour éviter le cache
-    
             // Réinitialiser l'affichage de la page au chargement
             const testOptions = document.getElementById('testOptions');
             const initialOptions = document.getElementById('initialOptions');
@@ -128,6 +118,7 @@
             });
         });
     </script>
+    
     
 </body>
 </html>
