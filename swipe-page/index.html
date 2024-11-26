@@ -3,64 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Page avec Icônes Cliquables</title>
-    <!-- Lien vers la bibliothèque FontAwesome pour les icônes -->
+    <title>Paramétrage et Dépannage</title>
+    <link rel="stylesheet" href="../css/themes/default/jquery.mobile-1.4.5.min.css">
+    <link rel="stylesheet" href="../_assets/css/jqm-demos.css">
+    <link rel="stylesheet" href="swipe-page.css">
+    <link rel="shortcut icon" href="../favicon.ico">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            background-color: #f5f5f5;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            height: 100vh;
-        }
-
-        .icon-container {
-            display: flex;
-            justify-content: space-around;
-            margin-top: 20px;
-            margin-bottom: 20px;
-        }
-
-        .icon {
-            font-size: 5em;
-            color: #007bb5;
-            cursor: pointer;
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-
-        .icon:hover {
-            color: #005f8c;
-        }
-
-        .label {
-            font-size: 1.5em;
-            margin-top: 10px;
-        }
-    </style>
+    <script src="../js/jquery.js"></script>
+    <script src="../js/jquery.mobile-1.4.5.min.js"></script>
 </head>
 <body>
 
-    <h1>Paramétrage et Dépannage</h1>
+<div data-role="page" id="parametrage-depannage">
 
-    <div class="icon-container">
-        <!-- Icône Paramétrage -->
-        <a href="page1c.html" class="icon">
-            <i class="fas fa-cogs"></i>
-            <div class="label">Paramétrage</div>
-        </a>
-        
-        <!-- Icône Dépannage -->
-        <a href="param.html" class="icon">
-            <i class="fas fa-tools"></i>
-            <div class="label">Dépannage</div>
-        </a>
-    </div>
+    <div id="header" data-role="header" data-id="header" data-position="fixed" data-fullscreen="true" data-tap-toggle="false">
+        <h1>Paramétrage et Dépannage</h1>
+    </div><!-- /header -->
+
+    <div role="main" class="ui-content">
+        <div class="ui-grid-solo">
+
+            <!-- Icône Paramétrage -->
+            <div class="ui-block-a">
+                <a href="depann.html" class="ui-btn ui-corner-all ui-shadow ui-btn-icon-left">
+                    <i class="fas fa-cogs fa-3x"></i>
+                    <span>Paramétrage</span>
+                </a>
+            </div>
+
+            <!-- Icône Dépannage -->
+            <div class="ui-block-a">
+                <a href="param.html" class="ui-btn ui-corner-all ui-shadow ui-btn-icon-left">
+                    <i class="fas fa-tools fa-3x"></i>
+                    <span>Dépannage</span>
+                </a>
+            </div>
+
+        </div>
+    </div><!-- /content -->
+
+    <div id="footer" data-id="footer" data-position="fixed" data-fullscreen="true" data-tap-toggle="false">
+        <div data-role="controlgroup" class="control ui-btn-left" data-type="horizontal" data-mini="true">
+            <a href="#" class="prev ui-btn ui-btn-icon-notext ui-icon-carat-l">Previous</a>
+            <a href="#" class="next ui-btn ui-btn-icon-notext ui-icon-carat-r">Next</a>
+        </div>
+    </div><!-- /footer -->
+
+</div><!-- /page -->
 
 </body>
 </html>
