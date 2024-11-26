@@ -72,8 +72,8 @@
 
     <!-- Boutons pour tester le Bip -->
     <div id="initialOptions">
-        <button id="bipOkButton" class="button">BIP OK</button>
-        <button id="pasDeBipButton" class="button red-button">PAS DE BIP</button>
+        <button id="parametreButton" class="icon-button">&#9881; Paramètre</button>
+        <button id="depannageButton" class="icon-button">&#128736; Dépannage</button>
     </div>
 
     <!-- Boutons pour le choix du dépannage -->
@@ -102,8 +102,8 @@
             initialOptions.classList.remove('hidden');
     
             // Sélectionner les boutons
-            const bipOkButton = document.getElementById('bipOkButton');
-            const pasDeBipButton = document.getElementById('pasDeBipButton');
+            const parametreButton = document.getElementById('parametreButton');
+            const depannageButton = document.getElementById('depannageButton');
             const bipOkIcon = document.getElementById('bipOkIcon');
             const pasDeBipIcon = document.getElementById('pasDeBipIcon');
             const testDepartButton = document.getElementById('testDepartButton');
@@ -111,13 +111,13 @@
             const backButtonDepannage = document.getElementById('backButtonDepannage');
             const backButtonTest = document.getElementById('backButtonTest');
     
-            // Action pour le bouton "BIP OK"
-            bipOkButton.addEventListener('click', () => {
+            // Action pour le bouton "Paramètre"
+            parametreButton.addEventListener('click', () => {
                 window.location.href = 'https://franckccc.github.io/FFCK/swipe-page/page1c.html';
             });
-    
-            // Action pour le bouton "PAS DE BIP"
-            pasDeBipButton.addEventListener('click', () => {
+
+            // Action pour le bouton "Dépannage"
+            depannageButton.addEventListener('click', () => {
                 depannageOptions.classList.remove('hidden');
                 initialOptions.classList.add('hidden');
             });
