@@ -4,13 +4,56 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Paramétrage et Dépannage</title>
+    <!-- Lien vers la bibliothèque FontAwesome pour les icônes -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="../css/themes/default/jquery.mobile-1.4.5.min.css">
     <link rel="stylesheet" href="../_assets/css/jqm-demos.css">
-    <link rel="stylesheet" href="swipe-page.css">
-    <link rel="shortcut icon" href="../favicon.ico">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <script src="../js/jquery.js"></script>
     <script src="../js/jquery.mobile-1.4.5.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .icon-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 30px;
+            width: 100%;
+        }
+
+        .icon-link {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-decoration: none;
+            color: #007bb5;
+            transition: color 0.3s;
+        }
+
+        .icon-link:hover {
+            color: #005f8c;
+        }
+
+        .icon {
+            font-size: 5em;
+        }
+
+        .label {
+            font-size: 1.5em;
+            margin-top: 10px;
+        }
+    </style>
 </head>
 <body>
 
@@ -21,24 +64,18 @@
     </div><!-- /header -->
 
     <div role="main" class="ui-content">
-        <div class="ui-grid-solo">
-
+        <div class="icon-container">
             <!-- Icône Paramétrage -->
-            <div class="ui-block-a">
-                <a href="depann.html" class="ui-btn ui-corner-all ui-shadow ui-btn-icon-left">
-                    <i class="fas fa-cogs fa-3x"></i>
-                    <span>Paramétrage</span>
-                </a>
-            </div>
-
+            <a href="depann.html" class="icon-link">
+                <i class="fas fa-cogs icon"></i>
+                <span class="label">Paramétrage</span>
+            </a>
+            
             <!-- Icône Dépannage -->
-            <div class="ui-block-a">
-                <a href="param.html" class="ui-btn ui-corner-all ui-shadow ui-btn-icon-left">
-                    <i class="fas fa-tools fa-3x"></i>
-                    <span>Dépannage</span>
-                </a>
-            </div>
-
+            <a href="param.html" class="icon-link">
+                <i class="fas fa-tools icon"></i>
+                <span class="label">Dépannage</span>
+            </a>
         </div>
     </div><!-- /content -->
 
