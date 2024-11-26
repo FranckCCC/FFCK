@@ -74,7 +74,6 @@
     <div id="initialOptions">
         <button id="bipOkButton" class="button">BIP OK</button>
         <button id="pasDeBipButton" class="button red-button">PAS DE BIP</button>
-        <button id="depannageButton" class="button">Dépannage</button>
     </div>
 
     <!-- Boutons pour le choix du dépannage -->
@@ -105,7 +104,6 @@
             // Sélectionner les boutons
             const bipOkButton = document.getElementById('bipOkButton');
             const pasDeBipButton = document.getElementById('pasDeBipButton');
-            const depannageButton = document.getElementById('depannageButton');
             const bipOkIcon = document.getElementById('bipOkIcon');
             const pasDeBipIcon = document.getElementById('pasDeBipIcon');
             const testDepartButton = document.getElementById('testDepartButton');
@@ -120,12 +118,6 @@
     
             // Action pour le bouton "PAS DE BIP"
             pasDeBipButton.addEventListener('click', () => {
-                testOptions.classList.remove('hidden');
-                initialOptions.classList.add('hidden');
-            });
-    
-            // Action pour le bouton "Dépannage"
-            depannageButton.addEventListener('click', () => {
                 depannageOptions.classList.remove('hidden');
                 initialOptions.classList.add('hidden');
             });
@@ -160,7 +152,7 @@
             // Action pour le bouton "Retour" des tests
             backButtonTest.addEventListener('click', () => {
                 testOptions.classList.add('hidden');
-                initialOptions.classList.remove('hidden');
+                depannageOptions.classList.remove('hidden');
             });
         });
     </script>
