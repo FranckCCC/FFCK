@@ -40,6 +40,9 @@
             text-decoration: none;
             color: #007bb5;
             transition: color 0.3s;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
 
         .icon-link:hover {
@@ -48,11 +51,31 @@
 
         .icon {
             font-size: 5em;
+            margin-bottom: 10px; /* Espace entre l'icône et le texte */
         }
 
         .label {
             font-size: 1.5em;
             margin-top: 10px;
+        }
+
+        .ui-footer {
+            background: none !important;
+            border: none !important;
+        }
+
+        .small-button {
+            font-size: 1em;
+            padding: 10px;
+            background-color: #008CBA;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .small-button:hover {
+            background-color: #007bb5;
         }
     </style>
 </head>
@@ -65,7 +88,7 @@
             <h1>Paramétrage</h1>
         </div><!-- /header -->
 
-        <div role="main" class="ui-content" style="padding: 0;">
+        <div role="main" class="ui-content">
             <div class="icon-container">
                 <a href="#page1b" class="icon-link">
                     <i class="fas fa-cogs icon"></i>
@@ -85,7 +108,7 @@
             <h1>Dépannage</h1>
         </div><!-- /header -->
 
-        <div role="main" class="ui-content" style="padding: 0;">
+        <div role="main" class="ui-content">
             <div class="icon-container">
                 <a href="#page1c" class="icon-link">
                     <i class="fas fa-tools icon"></i>
