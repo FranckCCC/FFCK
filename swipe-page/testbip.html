@@ -75,49 +75,59 @@
         <button id="backButton" class="small-button">Retour</button>
     </div>
 
-<script>
-    document.addEventListener('DOMContentLoaded', () => {
-        // Réinitialiser l'affichage de la page au chargement
-        testOptions.classList.add('hidden');
-        initialOptions.classList.remove('hidden');
-    });
-
-    // Sélectionner les boutons
-    const bipOkButton = document.getElementById('bipOkButton');
-    const pasDeBipButton = document.getElementById('pasDeBipButton');
-    const testOptions = document.getElementById('testOptions');
-    const initialOptions = document.getElementById('initialOptions');
-    const testDepartButton = document.getElementById('testDepartButton');
-    const testArriveeButton = document.getElementById('testArriveeButton');
-    const backButton = document.getElementById('backButton');
-
-    // Action pour le bouton "BIP OK"
-    bipOkButton.addEventListener('click', () => {
-        window.location.href = 'https://franckccc.github.io/FFCK/swipe-page/page1c.html';
-    });
-
-    // Action pour le bouton "PAS DE BIP"
-    pasDeBipButton.addEventListener('click', () => {
-        testOptions.classList.remove('hidden');
-        initialOptions.classList.add('hidden');
-    });
-
-    // Action pour le bouton "TEST DEPART"
-    testDepartButton.addEventListener('click', () => {
-        window.location.href = 'https://franckccc.github.io/FFCK/swipe-page/page1b.html';
-    });
-
-    // Action pour le bouton "TEST ARRIVEE"
-    testArriveeButton.addEventListener('click', () => {
-        window.location.href = 'https://franckccc.github.io/FFCK/swipe-page/page2b.html';
-    });
-
-    // Action pour le bouton "Retour"
-    backButton.addEventListener('click', () => {
-        testOptions.classList.add('hidden');
-        initialOptions.classList.remove('hidden');
-    });
-</script>
-
+    <script>
+        function reloadCSS() {
+            const links = document.querySelectorAll('link[rel="stylesheet"]');
+            links.forEach(link => {
+                const href = link.getAttribute('href');
+                link.setAttribute('href', href.split('?')[0] + '?v=' + new Date().getTime());
+            });
+        }
+    
+        window.addEventListener('load', () => {
+            reloadCSS(); // Recharger les feuilles de style pour éviter le cache
+    
+            // Réinitialiser l'affichage de la page au chargement
+            const testOptions = document.getElementById('testOptions');
+            const initialOptions = document.getElementById('initialOptions');
+            testOptions.classList.add('hidden');
+            initialOptions.classList.remove('hidden');
+    
+            // Sélectionner les boutons
+            const bipOkButton = document.getElementById('bipOkButton');
+            const pasDeBipButton = document.getElementById('pasDeBipButton');
+            const testDepartButton = document.getElementById('testDepartButton');
+            const testArriveeButton = document.getElementById('testArriveeButton');
+            const backButton = document.getElementById('backButton');
+    
+            // Action pour le bouton "BIP OK"
+            bipOkButton.addEventListener('click', () => {
+                window.location.href = 'https://franckccc.github.io/FFCK/swipe-page/page1c.html';
+            });
+    
+            // Action pour le bouton "PAS DE BIP"
+            pasDeBipButton.addEventListener('click', () => {
+                testOptions.classList.remove('hidden');
+                initialOptions.classList.add('hidden');
+            });
+    
+            // Action pour le bouton "TEST DEPART"
+            testDepartButton.addEventListener('click', () => {
+                window.location.href = 'https://franckccc.github.io/FFCK/swipe-page/page1b.html';
+            });
+    
+            // Action pour le bouton "TEST ARRIVEE"
+            testArriveeButton.addEventListener('click', () => {
+                window.location.href = 'https://franckccc.github.io/FFCK/swipe-page/page2b.html';
+            });
+    
+            // Action pour le bouton "Retour"
+            backButton.addEventListener('click', () => {
+                testOptions.classList.add('hidden');
+                initialOptions.classList.remove('hidden');
+            });
+        });
+    </script>
+    
 </body>
 </html>
