@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,7 +11,6 @@
     <link rel="stylesheet" href="../_assets/css/jqm-demos.css">
     <script src="../js/jquery.js"></script>
     <script src="../js/jquery.mobile-1.4.5.min.js"></script>
-	<meta name="viewport" content="width=device-width, initial-scale=1">
     <script src="swipe-page.js"></script>
     <style>
         html, body {
@@ -56,31 +56,60 @@
         }
     </style>
 </head>
+
 <body>
 
-<div data-role="page" id="parametrage-depannage">
+    <!-- Page 1 (Paramétrage) -->
+    <div data-role="page" id="page1" class="demo-page">
+        <div data-role="header" data-id="header" data-position="fixed" data-fullscreen="true" data-tap-toggle="false">
+            <h1>Paramétrage</h1>
+        </div><!-- /header -->
 
-    <div data-role="header" data-id="header" data-position="fixed" data-fullscreen="true" data-tap-toggle="false">
-        <h1>Paramétrage et Dépannage</h1>
-    </div><!-- /header -->
+        <div role="main" class="ui-content" style="padding: 0;">
+            <div class="icon-container">
+                <a href="#page1b" class="icon-link">
+                    <i class="fas fa-cogs icon"></i>
+                    <span class="label">Configuration avancée</span>
+                </a>
+            </div>
+        </div><!-- /content -->
 
-    <div role="main" class="ui-content" style="padding: 0;">
-        <div class="icon-container">
-            <!-- Icône Paramétrage -->
-            <a href="page1.html" class="icon-link">
-                <i class="fas fa-cogs icon"></i>
-                <span class="label">Paramétrage</span>
-            </a>
-            
-            <!-- Icône Dépannage -->
-            <a href="testbip.html" class="icon-link">
-                <i class="fas fa-tools icon"></i>
-                <span class="label">Dépannage</span>
-            </a>
-        </div>
-    </div><!-- /content -->
+        <div data-role="footer" class="ui-footer">
+            <a href="#page2" class="small-button">Aller à la Page 2</a>
+        </div><!-- /footer -->
+    </div><!-- /page -->
 
-</div><!-- /page -->
+    <!-- Page 2 (Dépannage) -->
+    <div data-role="page" id="page2" class="demo-page">
+        <div data-role="header" data-id="header" data-position="fixed" data-fullscreen="true" data-tap-toggle="false">
+            <h1>Dépannage</h1>
+        </div><!-- /header -->
+
+        <div role="main" class="ui-content" style="padding: 0;">
+            <div class="icon-container">
+                <a href="#page1c" class="icon-link">
+                    <i class="fas fa-tools icon"></i>
+                    <span class="label">Outils</span>
+                </a>
+            </div>
+        </div><!-- /content -->
+
+        <div data-role="footer" class="ui-footer">
+            <a href="#page1" class="small-button">Retour à la Page 1</a>
+        </div><!-- /footer -->
+    </div><!-- /page -->
+
+    <!-- Autres pages définies avec les identifiants correspondants au CSS -->
+    <div data-role="page" id="page1b" class="demo-page"></div>
+    <div data-role="page" id="page2b" class="demo-page"></div>
+    <div data-role="page" id="page1c" class="demo-page"></div>
+    <div data-role="page" id="page2c" class="demo-page"></div>
+    <div data-role="page" id="page3" class="demo-page"></div>
+    <div data-role="page" id="page4" class="demo-page"></div>
+    <div data-role="page" id="page5" class="demo-page"></div>
+    <div data-role="page" id="page6" class="demo-page"></div>
+    <div data-role="page" id="page7" class="demo-page"></div>
 
 </body>
+
 </html>
