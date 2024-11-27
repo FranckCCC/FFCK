@@ -59,13 +59,21 @@
             border: none;
             background: none;
             cursor: pointer;
-            width: 360px;
+            width: 160px;
             font-size: 10em;
             margin: 20px;
         }
 
         .hidden {
             display: none;
+        }
+
+        .green {
+            color: #4CAF50;
+        }
+
+        .red {
+            color: #f44336;
         }
     </style>
 </head>
@@ -86,8 +94,8 @@
 
     <!-- Boutons pour tester le départ ou l'arrivée, cachés initialement -->
     <div id="testOptions" class="hidden">
-        <button id="testDepartButton" class="icon-button">&#127937; Départ</button>
-        <button id="testArriveeButton" class="icon-button red-button">&#127937; Arrivée</button>
+        <button id="testDepartButton" class="icon-button green">&#127894; Départ</button>
+        <button id="testArriveeButton" class="icon-button red">&#128681; Arrivée</button>
         <button id="backButtonTest" class="small-button">Retour</button>
     </div>
 
