@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Paramétrage chrono</title>
+    <link rel="stylesheet" href="../css/themes/default/jquery.mobile-1.4.5.min.css">
+    <link rel="stylesheet" href="../_assets/css/jqm-demos.css">
+    <link rel="stylesheet" href="swipe-page.css">
+    <link rel="shortcut icon" href="../favicon.ico">
+    <script src="../js/jquery.js"></script>
+    <script src="../_assets/js/index.js"></script>
+    <script src="../js/jquery.mobile-1.4.5.min.js"></script>
+    <script src="swipe-page.js"></script>
+</head>
+<body>
+
+<div id="header" data-role="header" data-id="header" data-position="fixed" data-fullscreen="true" data-tap-toggle="false">
+    <h1>Paramétrage chrono</h1>
+    <a href="./" data-ajax="false" data-direction="reverse" data-icon="delete" data-iconpos="notext" data-shadow="false" data-icon-shadow="false">Back</a>
+</div><!-- /header -->
+
+<div data-role="page" id="page7d" class="demo-page" data-title="Page 2/10" data-dom-cache="true" data-theme="b" data-prev="page6d" data-next="page8d">
+
+    <div role="main" class="ui-content">
+        <!-- Image cliquable qui redirige vers testbip.html -->
+		<a href="testbip.html" data-ajax="false">
+            <img src="img/cadre.png" alt="Cliquer pour tester le bip" style="width:100%; height:auto;">
+        </a>
+    </div><!-- /content -->
+
+</div><!-- /page -->
+
+<div id="footer" data-id="footer" data-position="fixed" data-fullscreen="true" data-tap-toggle="false">
+    <div data-role="controlgroup" class="control ui-btn-left" data-type="horizontal" data-mini="true">
+        <a href="#" class="prev ui-btn ui-btn-icon-notext ui-icon-carat-l">Previous</a>
+        <a href="#" class="next ui-btn ui-btn-icon-notext ui-icon-carat-r">Next</a>
+    </div>
+</div><!-- /footer -->
+
+<script>
+    $(document).on("pageshow", "#page7d", function () {
+        // Assurez-vous que le bouton Retour et les autres éléments sont visibles
+        $("#header").show();
+        $("#footer").show();
+    });
+
+    // Optionnel : Si vous voulez également vous assurer que les autres parties sont mises à jour dès qu'une page est chargée
+    $(document).on("pagecreate", "#page7d", function () {
+        // Réinitialiser tout au chargement de la page
+        $("#header").show();
+        $("#footer").show();
+    });
+</script>
+
+</body>
+</html>
