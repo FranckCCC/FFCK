@@ -1,124 +1,47 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tester le Bip</title>
-
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            background-color: #f5f5f5;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            height: 100vh;
-        }
-
-        .button {
-            font-size: 2em;
-            padding: 20px;
-            margin: 20px;
-            width: 80%;
-            max-width: 400px;
-            background-color: #4CAF50;
-            color: white;
-            border: none;
-            border-radius: 10px;
-            cursor: pointer;
-        }
-
-        .button:hover {
-            background-color: #45a049;
-        }
-
-        .red-button {
-            background-color: #f44336;
-        }
-
-        .red-button:hover {
-            background-color: #d32f2f;
-        }
-
-        .small-button {
-            font-size: 1em;
-            padding: 10px;
-            width: 150px;
-            background-color: #008CBA;
-            margin-top: 10px;
-        }
-
-        .small-button:hover {
-            background-color: #007bb5;
-        }
-
-        .hidden {
-            display: none;
-        }
-    </style>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Test Bip</title>
+    <link rel="stylesheet" href="../css/themes/default/jquery.mobile-1.4.5.min.css">
+    <link rel="stylesheet" href="../_assets/css/jqm-demos.css">
+    <link rel="stylesheet" href="swipe-page.css">
+    <link rel="shortcut icon" href="../favicon.ico">
+    <script src="../js/jquery.js"></script>
+    <script src="../_assets/js/index.js"></script>
+    <script src="../js/jquery.mobile-1.4.5.min.js"></script>
 </head>
 <body>
 
-    <!-- Boutons pour tester le Bip -->
-    <div id="initialOptions">
-        <button id="bipOkButton" class="button">BIP OK</button>
-        <button id="pasDeBipButton" class="button red-button">PAS DE BIP</button>
-    </div>
+<div data-role="page" id="choicePage" class="demo-page" data-title="Index" data-theme="b">
+    <div id="header" data-role="header" data-id="header" data-position="fixed" data-fullscreen="true" data-tap-toggle="false">
+        <h1>Paramétrages</h1>
+    </div><!-- /header -->
 
-    <!-- Boutons pour tester le départ ou l'arrivée, cachés initialement -->
-    <div id="testOptions" class="hidden">
-        <button id="testDepartButton" class="button">TEST DEPART</button>
-        <button id="testArriveeButton" class="button red-button">TEST ARRIVEE</button>
-        <button id="backButton" class="small-button">Retour</button>
-    </div>
+    <div role="main" class="ui-content">
+        <div style="display: flex; justify-content: space-around; align-items: center; height: 80vh;">
+            <div>
+                <a href="page1c.html" data-ajax="false">
+                    <img src="img/ico-bipOK.png" alt="BIP OK" style="width: 150px; height: auto;">
+                    <h2>BIP OK</h2>
+					
+                </a>
+            </div>
+            <div>
+                <a href="page1b.html" data-ajax="false">
+                    <img src="img/ico-bipNoBIP.png" alt="NO BIP" style="width: 150px; height: auto;">
+                    <h2>NO BIP</h2>
+                </a>
+            </div>
+        </div>
+    </div><!-- /content -->
 
-    <script>
-        window.addEventListener('load', () => {
-            // Réinitialiser l'affichage de la page au chargement
-            const testOptions = document.getElementById('testOptions');
-            const initialOptions = document.getElementById('initialOptions');
-            testOptions.classList.add('hidden');
-            initialOptions.classList.remove('hidden');
-    
-            // Sélectionner les boutons
-            const bipOkButton = document.getElementById('bipOkButton');
-            const pasDeBipButton = document.getElementById('pasDeBipButton');
-            const testDepartButton = document.getElementById('testDepartButton');
-            const testArriveeButton = document.getElementById('testArriveeButton');
-            const backButton = document.getElementById('backButton');
-    
-            // Action pour le bouton "BIP OK"
-            bipOkButton.addEventListener('click', () => {
-                window.location.href = 'https://franckccc.github.io/FFCK/swipe-page/page1c.html';
-            });
-    
-            // Action pour le bouton "PAS DE BIP"
-            pasDeBipButton.addEventListener('click', () => {
-                testOptions.classList.remove('hidden');
-                initialOptions.classList.add('hidden');
-            });
-    
-            // Action pour le bouton "TEST DEPART"
-            testDepartButton.addEventListener('click', () => {
-                window.location.href = 'https://franckccc.github.io/FFCK/swipe-page/page1b.html';
-            });
-    
-            // Action pour le bouton "TEST ARRIVEE"
-            testArriveeButton.addEventListener('click', () => {
-                window.location.href = 'https://franckccc.github.io/FFCK/swipe-page/page2b.html';
-            });
-    
-            // Action pour le bouton "Retour"
-            backButton.addEventListener('click', () => {
-                testOptions.classList.add('hidden');
-                initialOptions.classList.remove('hidden');
-            });
-        });
-    </script>
-    
-    
+    <div id="footer" data-role="footer" data-id="footer" data-position="fixed" data-fullscreen="true" data-tap-toggle="false">
+        <h4>&copy; 2024 Dépannage - TEST BIP </h4>
+    </div><!-- /footer -->
+</div><!-- /page -->
+
+
 </body>
 </html>
