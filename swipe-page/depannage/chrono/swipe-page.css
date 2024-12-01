@@ -1,0 +1,101 @@
+/* Set the background image sources */
+#page1 { background-image: url("img/page1.jpg"); }
+#page2 { background-image: url("img/page2.jpg"); }
+#page3 { background-image: url("img/page3.jpg"); }
+#page4 { background-image: url("img/page4.jpg"); }
+#page5 { background-image: url("img/page5.jpg"); }
+#page6 { background-image: url("img/page6.jpg"); }
+#page7 { background-image: url("img/page7.jpg"); }
+#page1b { background-image: url("img/page1b.jpg"); }
+#page2b { background-image: url("img/page2b.jpg"); }
+#page1c { background-image: url("img/page1c.jpg"); }
+#page2c { background-image: url("img/page2c.jpg"); }
+#page1d { background-image: url("img/page1d.jpg"); }
+#page2d { background-image: url("img/page2d.jpg"); }
+#page3d { background-image: url("img/page3d.jpg"); }
+#page4d { background-image: url("img/page4d.jpg"); }
+#page5d { background-image: url("img/page5d.jpg"); }
+#page6d { background-image: url("img/page6d.jpg"); }
+#page7d { background-image: url("img/page7d.jpg"); }
+#page8d { background-image: url("img/page8d.jpg"); }
+#page9d { background-image: url("img/page9d.jpg"); }
+#page10d { background-image: url("img/page10d.jpg"); }
+
+/* Background settings */
+.demo-page {
+    background-size: cover; /* L'image couvre tout l'élément */
+    background-position: center center; /* Centrage de l'image */
+    background-repeat: no-repeat; /* Pas de répétition de l'image */
+    height: 100vh; /* Assure que chaque page couvre toute la hauteur de l'écran */
+    width: 100vw; /* Assure que chaque page couvre toute la largeur de l'écran */
+}
+
+/* Transparent footer */
+.demo-page .ui-footer {
+    background: none;
+    border: none;
+    bottom: 0;
+}
+
+/* Positionnement des boutons du footer */
+.control.ui-btn-left,
+.trivia-btn.ui-btn-right {
+    top: auto;
+    bottom: 7px;
+    margin: 0;
+}
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #f5f5f5;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100vh;
+}
+
+.button {
+    font-size: 2em;
+    padding: 20px;
+    margin: 20px;
+    width: 80%;
+    max-width: 400px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.button:hover {
+    background-color: #45a049;
+}
+
+.red-button {
+    background-color: #f44336;
+}
+
+.red-button:hover {
+    background-color: #d32f2f;
+}
+
+.small-button {
+    font-size: 1em;
+    padding: 10px;
+    width: 150px;
+    background-color: #008CBA;
+    margin-top: 10px;
+}
+
+.small-button:hover {
+    background-color: #007bb5;
+}
+
+/* Custom styling for the trivia source */
+small {
+    font-size: 0.75em;
+    color: #666;
+    
+}
