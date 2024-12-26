@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <title>Générateur de QR Code</title>
+  <!-- Import de la librairie QRCode.js (CDN ou local) -->
+  <script src="https://cdn.jsdelivr.net/gh/davidshimjs/qrcodejs/qrcode.min.js"></script>
+  
+  <style>
+    body {
+      font-family: sans-serif;
+      text-align: center;
+      margin-top: 50px;
+    }
+    #qrcode {
+      margin: 0 auto;
+      width: 256px;
+      height: 256px;
+    }
+    input[type="text"] {
+      width: 300px;
+      padding: 5px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Générateur de QR Code</h1>
+  
+  <!-- Champ pour entrer l'URL -->
+  <input type="text" id="urlInput" placeholder="Entrez votre URL..." />
+  <button onclick="genererQRCode()">Générer le QR Code</button>
+  
+  <!-- Conteneur où le QR Code sera généré -->
+  <div id="qrcode"></div>
+  
+  <script>
+    function genererQRCode() {
+      // Récupérer la valeur du champ texte
+      const url = document.getElementById('urlInput').value.trim();
+      
+      // Vérifier qu'une URL est renseignée
+      if (!url) {
+        alert("Veuillez saisir une URL valide");
+        return;
+      }
+      
+      // Vider l'éventuel ancien QR Code
+      document.getElementById('qrcode').innerHTML = "";
+
+      // Créer une instance de QRCode pour générer le QR Code
+      new QRCode(document.getElementById('qrcode'), {
+        text: url,
+        width: 256,       // Largeur du QR Code
+        height: 256,      // Hauteur du QR Code
+        colorDark: "#000", // Couleur du "code"
+        colorLight: "#fff",// Couleur de fond
+        correctLevel: QRCode.CorrectLevel.H
+      });
+    }
+  </script>
+</body>
+</html>
