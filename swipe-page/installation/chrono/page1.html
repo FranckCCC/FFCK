@@ -39,14 +39,14 @@
 </div><!-- /footer -->
 
 <script>
-    $(document).on("pageshow", "#page1b", function () {
+    $(document).on("pageshow", "#page1", function () {
         // Assurez-vous que le bouton Retour et les autres éléments sont visibles
         $("#header").show();
         $("#footer").show();
     });
 
     // Optionnel : Si vous voulez également vous assurer que les autres parties sont mises à jour dès qu'une page est chargée
-    $(document).on("pagecreate", "#page1b", function () {
+    $(document).on("pagecreate", "#page1", function () {
         // Réinitialiser tout au chargement de la page
         $("#header").show();
         $("#footer").show();
