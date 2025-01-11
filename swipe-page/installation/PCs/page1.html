@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Installation PCs</title>
+    <link rel="stylesheet" href="../../css/themes/default/jquery.mobile-1.4.5.min.css">
+    <link rel="stylesheet" href="../../_assets/css/jqm-demos.css">
+    <link rel="stylesheet" href="swipe-page.css">
+    <link rel="shortcut icon" href="../../favicon.ico">
+    <script src="../../js/jquery.js"></script>
+    <script src="../../_assets/js/index.js"></script>
+    <script src="../../js/jquery.mobile-1.4.5.min.js"></script>
+    <script src="../../swipe-page.js"></script>
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+ 
+</head>
+<body>
+
+<div id="header" data-role="header" data-id="header" data-position="fixed" data-fullscreen="true" data-tap-toggle="false">
+    <h1>Installation PCs</h1>
+    <a href="../../install.html" data-ajax="false" data-icon="home" data-iconpos="notext" data-shadow="false" data-icon-shadow="false">Home</a>
+</div><!-- /header -->
+
+<div data-role="page" id="page1" class="demo-page" data-title="PCs - 1/5" data-dom-cache="true" data-theme="a" data-prev="#" data-next="page2">
+   
+    <div role="main" class="ui-content">
+        <!-- Image cliquable qui redirige vers testbip.html -->
+		<a href="page2.html" data-ajax="false">
+            <img src="img/pc1.png" alt="" style="width:100%; height:auto;">
+        </a>
+    </div><!-- /content -->
+
+</div><!-- /page -->
+
+<div id="footer" data-id="footer" data-position="fixed" data-fullscreen="true" data-tap-toggle="false">
+    <div data-role="controlgroup" class="control ui-btn-left" data-type="horizontal" data-mini="true">
+        <a href="#" class="prev ui-btn ui-btn-icon-notext ui-icon-carat-l" data-ajax="false">Previous</a>
+        <a href="page2.html" class="next ui-btn ui-btn-icon-notext ui-icon-carat-r" data-ajax="false">Next</a>
+    </div>
+</div><!-- /footer -->
+
+<script>
+    $(document).on("pageshow", "#page1", function () {
+        // Assurez-vous que le bouton Retour et les autres éléments sont visibles
+        $("#header").show();
+        $("#footer").show();
+    });
+
+    // Optionnel : Si vous voulez également vous assurer que les autres parties sont mises à jour dès qu'une page est chargée
+    $(document).on("pagecreate", "#page1", function () {
+        // Réinitialiser tout au chargement de la page
+        $("#header").show();
+        $("#footer").show();
+    });
+</script>
+
+</body>
+</html>
