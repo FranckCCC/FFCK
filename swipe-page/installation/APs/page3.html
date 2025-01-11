@@ -25,12 +25,12 @@
     <a href="../../install.html" data-ajax="false" data-icon="home" data-iconpos="notext" data-shadow="false" data-icon-shadow="false">Home</a>
 </div><!-- /header -->
 
-<div data-role="page" id="page1" class="demo-page" data-title="APs - 1/5" data-dom-cache="true" data-theme="a" data-prev="#" data-next="page2">
+<div data-role="page" id="page3" class="demo-page" data-title="APs - 3/5" data-dom-cache="true" data-theme="a" data-prev="page2" data-next="page4">
    
     <div role="main" class="ui-content">
         <!-- Image cliquable qui redirige vers testbip.html -->
-		<a href="page2.html" data-ajax="false">
-            <img src="img/ap1.png" alt="" style="width:100%; height:auto;">
+		<a href="page4.html" data-ajax="false">
+            <img src="img/ap3.png" alt="" style="width:100%; height:auto;">
         </a>
     </div><!-- /content -->
 
@@ -38,20 +38,20 @@
 
 <div id="footer" data-id="footer" data-position="fixed" data-fullscreen="true" data-tap-toggle="false">
     <div data-role="controlgroup" class="control ui-btn-left" data-type="horizontal" data-mini="true">
-        <a href="#" class="prev ui-btn ui-btn-icon-notext ui-icon-carat-l" data-ajax="false">Previous</a>
-        <a href="page2.html" class="next ui-btn ui-btn-icon-notext ui-icon-carat-r" data-ajax="false">Next</a>
+        <a href="page2.html" class="prev ui-btn ui-btn-icon-notext ui-icon-carat-l" data-ajax="false">Previous</a>
+        <a href="page4.html" class="next ui-btn ui-btn-icon-notext ui-icon-carat-r" data-ajax="false">Next</a>
     </div>
 </div><!-- /footer -->
 
 <script>
-    $(document).on("pageshow", "#page1", function () {
+    $(document).on("pageshow", "#page3", function () {
         // Assurez-vous que le bouton Retour et les autres éléments sont visibles
         $("#header").show();
         $("#footer").show();
     });
 
     // Optionnel : Si vous voulez également vous assurer que les autres parties sont mises à jour dès qu'une page est chargée
-    $(document).on("pagecreate", "#page1", function () {
+    $(document).on("pagecreate", "#page3", function () {
         // Réinitialiser tout au chargement de la page
         $("#header").show();
         $("#footer").show();
