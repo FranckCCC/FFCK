@@ -16,12 +16,12 @@
 <body>
 
 <!-- Définir une page correctement avec data-role="page" -->
-<div data-role="page" id="page3" class="demo-page" data-title="Page 3/4" data-theme="a">
+<div data-role="page" id="page3" class="demo-page" data-title="Page 3/4" data-theme="a"  data-prev="page2" data-next="page4">
 
     <!-- Header avec bouton Home -->
     <div id="header" data-role="header" data-id="header" data-position="fixed" data-fullscreen="true" data-tap-toggle="false">
         <h1>Installation Chrono</h1>
-        <a href="./installation.html" data-ajax="false" data-icon="home" data-iconpos="notext" data-shadow="false" data-icon-shadow="false">Home</a>
+        <a href="../installation.html" data-ajax="false" data-icon="home" data-iconpos="notext" data-shadow="false" data-icon-shadow="false">Home</a>
     </div><!-- /header -->
 
     <!-- Contenu principal -->
@@ -42,18 +42,7 @@
 
 </div><!-- /page -->
 
-<script>
-    // Gestion des événements pour cette page
-    $(document).on("pageshow", "#page3", function () {
-        $("#header").show();
-        $("#footer").show();
-    });
 
-    $(document).on("pagecreate", "#page3", function () {
-        $("#header").show();
-        $("#footer").show();
-    });
-</script>
 
 </body>
 </html>
