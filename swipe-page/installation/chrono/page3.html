@@ -2,7 +2,6 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Installation cellules</title>
     <link rel="stylesheet" href="../../css/themes/default/jquery.mobile-1.4.5.min.css">
@@ -16,51 +15,32 @@
     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
     <meta http-equiv="Pragma" content="no-cache">
     <meta http-equiv="Expires" content="0">
-
 </head>
 <body>
 
-<!-- Définir une page correctement avec data-role="page" -->
-<div data-role="page" id="page3" class="demo-page" data-title="Page 3/4" data-dom-cache="true" data-theme="a"  data-prev="page2" data-next="page4">
+<div id="header" data-role="header" data-id="header" data-position="fixed" data-fullscreen="true" data-tap-toggle="false">
+    <h1>Installation Chrono</h1>
+    <a href="../../install.html" data-ajax="false" data-icon="home" data-iconpos="notext" data-shadow="false" data-icon-shadow="false">Home</a>
+</div><!-- /header -->
 
-    <!-- Header avec bouton Home -->
-    <div id="header" data-role="header" data-id="header" data-position="fixed" data-fullscreen="true" data-tap-toggle="false">
-        <h1>Installation Chrono</h1>
-        <a href="../../install.html" data-ajax="false" data-icon="home" data-iconpos="notext" data-shadow="false" data-icon-shadow="false">Home</a>
-    </div><!-- /header -->
+<div data-role="page" id="page4" class="demo-page" data-title="Page 3/4" data-dom-cache="true" data-theme="a" data-prev="page2" data-next="page4">
+ 
 
-    <!-- Contenu principal -->
     <div role="main" class="ui-content">
-        <!-- Image cliquable qui redirige vers page3.html -->
-        <a href="page4.html" data-ajax="false">
-            <img src="img/chrono3.png" alt="Page suivante" style="width:100%; height:auto;">
+        <!-- Image cliquable qui redirige vers testbip.html -->
+		<a href="page4.html" data-ajax="false">
+            <img src="img/chrono3.png" alt="" style="width:100%; height:auto;">
         </a>
     </div><!-- /content -->
 
-    <div id="footer" data-role="footer" data-position="fixed" data-fullscreen="true" data-tap-toggle="false">
-        <div data-role="controlgroup" class="control ui-btn-left" data-type="horizontal" data-mini="true">
-            <a href="page2.html" class="prev ui-btn ui-btn-icon-notext ui-icon-carat-l" data-ajax="false">Previous</a>
-            <a href="page4.html" class="next ui-btn ui-btn-icon-notext ui-icon-carat-r" data-ajax="false">Next</a>
-        </div>
-    </div>
-    <script>
-        $(document).on("pageshow", "#page3", function () {
-            // Assurez-vous que le bouton Retour et les autres éléments sont visibles
-            $("#header").show();
-            $("#footer").show();
-        });
-    
-        // Optionnel : Si vous voulez également vous assurer que les autres parties sont mises à jour dès qu'une page est chargée
-        $(document).on("pagecreate", "#page3", function () {
-            // Réinitialiser tout au chargement de la page
-            $("#header").show();
-            $("#footer").show();
-        });
-    </script>
-    
-
 </div><!-- /page -->
 
+<div id="footer" data-id="footer" data-position="fixed" data-fullscreen="true" data-tap-toggle="false">
+    <div data-role="controlgroup" class="control ui-btn-left" data-type="horizontal" data-mini="true">
+        <a href="page2.html" class="prev ui-btn ui-btn-icon-notext ui-icon-carat-l" data-ajax="false">Previous</a>
+        <a href="page4.html" class="next ui-btn ui-btn-icon-notext ui-icon-carat-r">Next</a>
+    </div>
+</div><!-- /footer -->
 
 
 </body>
