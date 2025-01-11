@@ -18,7 +18,7 @@
 
 <div id="header" data-role="header" data-id="header" data-position="fixed" data-fullscreen="true" data-tap-toggle="false">
     <h1>Installation Chrono</h1>
-    <a href="./install.html" data-ajax="false" data-icon="home" data-iconpos="notext" data-shadow="false" data-icon-shadow="false">Home</a>
+    <a href="../install.html" data-ajax="false" data-icon="home" data-iconpos="notext" data-shadow="false" data-icon-shadow="false">Home</a>
 </div><!-- /header -->
 
 <div data-role="page" id="page2" class="demo-page" data-title="Page 2/4" data-prev="page1" data-next="page3" >
@@ -38,7 +38,20 @@
         <a href="page3.html" class="next ui-btn ui-btn-icon-notext ui-icon-carat-r">Next</a>
     </div>
 </div><!-- /footer -->
+<script>
+    $(document).on("pageshow", "#page2", function () {
+        // Assurez-vous que le bouton Retour et les autres éléments sont visibles
+        $("#header").show();
+        $("#footer").show();
+    });
 
+    // Optionnel : Si vous voulez également vous assurer que les autres parties sont mises à jour dès qu'une page est chargée
+    $(document).on("pagecreate", "#page2", function () {
+        // Réinitialiser tout au chargement de la page
+        $("#header").show();
+        $("#footer").show();
+    });
+</script>
 
 
 </body>
