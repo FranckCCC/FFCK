@@ -32,12 +32,13 @@
 
 </div><!-- /page -->
 
-<div id="footer" data-id="footer" data-position="fixed" data-fullscreen="true" data-tap-toggle="false">
+<div id="footer" data-role="footer" data-position="fixed" data-fullscreen="true" data-tap-toggle="false">
     <div data-role="controlgroup" class="control ui-btn-left" data-type="horizontal" data-mini="true">
-        <a href="page1.html" class="prev ui-btn ui-btn-icon-notext ui-icon-carat-l">Previous</a>
-        <a href="page3.html" class="next ui-btn ui-btn-icon-notext ui-icon-carat-r">Next</a>
+        <a href="page1.html" class="prev ui-btn ui-btn-icon-notext ui-icon-carat-l" data-ajax="false">Previous</a>
+        <a href="page3.html" class="next ui-btn ui-btn-icon-notext ui-icon-carat-r" data-ajax="false">Next</a>
     </div>
-</div><!-- /footer -->
+</div>
+
 <script>
     $(document).on("pageshow", "#page2", function () {
         // Assurez-vous que le bouton Retour et les autres éléments sont visibles
