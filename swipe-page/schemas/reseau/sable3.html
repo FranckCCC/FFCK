@@ -25,12 +25,12 @@
     <a href="index.html" data-ajax="false" data-icon="home" data-iconpos="notext" data-shadow="false" data-icon-shadow="false">Home</a>
 </div><!-- /header -->
 
-<div data-role="page" id="sable2" class="demo-page" data-title="Schéma Sablé" data-dom-cache="true" data-theme="a" data-prev="#" data-next="sable3">
+<div data-role="page" id="sable3" class="demo-page" data-title="Schéma Sablé" data-dom-cache="true" data-theme="a" data-prev="sable2" data-next="sable4">
    
     <div role="main" class="ui-content">
         <!-- Image cliquable qui redirige vers testbip.html -->
-		<a href="sable3.html" data-ajax="false">
-            <img src="img/sable2.jpg" alt="" style="width:100%; height:auto;">
+		<a href="sable4.html" data-ajax="false">
+            <img src="img/sable3.jpg" alt="" style="width:100%; height:auto;">
         </a>
     </div><!-- /content -->
 
@@ -38,20 +38,20 @@
 
 <div id="footer" data-id="footer" data-position="fixed" data-fullscreen="true" data-tap-toggle="false">
     <div data-role="controlgroup" class="control ui-btn-left" data-type="horizontal" data-mini="true">
-        <a href="index.html" class="prev ui-btn ui-btn-icon-notext ui-icon-carat-l" data-ajax="false">Previous</a>
+        <a href="sable2.html" class="prev ui-btn ui-btn-icon-notext ui-icon-carat-l" data-ajax="false">Previous</a>
         <a href="sable3.html" class="next ui-btn ui-btn-icon-notext ui-icon-carat-r" data-ajax="false">Next</a>
     </div>
 </div><!-- /footer -->
 
 <script>
-    $(document).on("pageshow", "#sable2", function () {
+    $(document).on("pageshow", "#sable3", function () {
         // Assurez-vous que le bouton Retour et les autres éléments sont visibles
         $("#header").show();
         $("#footer").show();
     });
 
     // Optionnel : Si vous voulez également vous assurer que les autres parties sont mises à jour dès qu'une page est chargée
-    $(document).on("pagecreate", "#sable2", function () {
+    $(document).on("pagecreate", "#sable3", function () {
         // Réinitialiser tout au chargement de la page
         $("#header").show();
         $("#footer").show();
