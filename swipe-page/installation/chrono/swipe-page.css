@@ -1,16 +1,11 @@
 /* Set the background image sources */
-#page1 { background-image: url("img/page1.jpg"); }
-#page2 { background-image: url("img/page2.jpg"); }
-#page3 { background-image: url("img/page3.jpg"); }
-#page4 { background-image: url("img/page4.jpg"); }
-#page5 { background-image: url("img/page5.jpg"); }
-#page6 { background-image: url("img/page6.jpg"); }
-#page7 { background-image: url("img/page7.jpg"); }
-#page8 { background-image: url("img/page8.jpg"); }
-#page9 { background-image: url("img/page9.jpg"); }
-#page10 { background-image: url("img/page10.jpg"); }
-#page11 { background-image: url("img/page11.jpg"); }
-#page12 { background-image: url("img/page12.jpg"); }
+#page1 { background-image: url("img/page1.png"); }
+#page2 { background-image: url("img/page1b.png"); }
+#page3 { background-image: url("img/page2.png"); }
+#page4 { background-image: url("img/page2b.png"); }
+#page5 { background-image: url("img/page3.png"); }
+#page6 { background-image: url("img/page4.png"); }
+
 
 
 /* Background settings */
