@@ -6,29 +6,25 @@
 #page5 { background-image: url("img/page5.jpg"); }
 #page6 { background-image: url("img/page6.jpg"); }
 #page7 { background-image: url("img/page7.jpg"); }
-#page1b { background-image: url("img/page1b.jpg"); }
-#page2b { background-image: url("img/page2b.jpg"); }
-#page1c { background-image: url("img/page1c.jpg"); }
-#page2c { background-image: url("img/page2c.jpg"); }
-#page1d { background-image: url("img/page1d.jpg"); }
-#page2d { background-image: url("img/page2d.jpg"); }
-#page3d { background-image: url("img/page3d.jpg"); }
-#page4d { background-image: url("img/page4d.jpg"); }
-#page5d { background-image: url("img/page5d.jpg"); }
-#page6d { background-image: url("img/page6d.jpg"); }
-#page7d { background-image: url("img/page7d.jpg"); }
-#page8d { background-image: url("img/page8d.jpg"); }
-#page9d { background-image: url("img/page9d.jpg"); }
-#page10d { background-image: url("img/page10d.jpg"); }
+#page8 { background-image: url("img/page8.jpg"); }
+#page9 { background-image: url("img/page9.jpg"); }
+#page10 { background-image: url("img/page10.jpg"); }
+#page11 { background-image: url("img/page11.jpg"); }
+#page12 { background-image: url("img/page12.jpg"); }
+
 
 /* Background settings */
+
 .demo-page {
-    background-size: cover; /* L'image couvre tout l'élément */
-    background-position: center center; /* Centrage de l'image */
-    background-repeat: no-repeat; /* Pas de répétition de l'image */
-    height: 100vh; /* Assure que chaque page couvre toute la hauteur de l'écran */
-    width: 100vw; /* Assure que chaque page couvre toute la largeur de l'écran */
+    background-size: cover;        /* ou contain si vous préférez */
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 100vh;            /* la page doit au moins faire la taille de l'écran */
+    width: 100%;                  /* occuper 100% de la largeur */
+    margin: 0;                    /* pour annuler tout éventuel margin par défaut */
+    padding: 0;                   /* pour annuler tout éventuel padding par défaut */
 }
+
 
 /* Transparent footer */
 .demo-page .ui-footer {
@@ -50,10 +46,10 @@ body {
     background-color: #f5f5f5;
     margin: 0;
     padding: 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    height: 100vh;
+    /* display: flex;            retirez si vous n’avez pas besoin d’un body flex */
+    /* flex-direction: column; */
+    /* justify-content: center; */
+    /* height: 100vh; */
 }
 
 .button {
