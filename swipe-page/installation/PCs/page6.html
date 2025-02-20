@@ -2,52 +2,52 @@
 <html lang="fr">
 <head>
   <meta charset="utf-8">
-  <!-- Adaptation mobile -->
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Installion PCs et APs</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Short YouTube</title>
+
+  <!-- CSS jQuery Mobile -->
+  <link rel="stylesheet" href="../../css/themes/default/jquery.mobile-1.4.5.min.css">
+  <link rel="stylesheet" href="../../_assets/css/jqm-demos.css"> 
+  <!-- Votre CSS swipe-page.css si nécessaire -->
+  <link rel="stylesheet" href="swipe-page.css">
+  
+  <!-- Font Awesome (assurez-vous que all.min.css et webfonts/ sont bien en place) -->
+  <link rel="stylesheet" href="../../css/all.min.css">
+  
+  <!-- Scripts jQuery / jQuery Mobile -->
+  <script src="../../js/jquery.js"></script>
+  <script src="../../_assets/js/index.js"></script>
+  <script src="../../js/jquery.mobile-1.4.5.min.js"></script>
+  <!-- Votre script swipe-page.js si nécessaire -->
+  <script src="../../swipe-page.js"></script>
+
+  <!-- Empêche la mise en cache, optionnel -->
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
+
+  <!-- Style interne pour la vidéo en plein écran -->
   <style>
+    /* Occupe toute la page */
     html, body {
       margin: 0;
       padding: 0;
+      width: 100%;
       height: 100%;
-      width: 100%;
     }
-
-    /* Bandeau fixe en haut */
-    .header {
-      position: fixed;       /* Reste collé en haut, même au défilement */
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 50px;         /* Hauteur du bandeau */
-      background-color: #333;
-      color: #fff;
-      display: flex;        /* Permet d'aligner facilement le contenu */
-      align-items: center;
-      padding: 0 15px;
-      box-sizing: border-box;
-      z-index: 9999;        /* Au-dessus de la vidéo */
-    }
-
-    /* Style du lien Home dans le bandeau */
-    .header a {
-      color: #fff;
-      text-decoration: none;
-      font-weight: bold;
-      font-size: 16px;
-    }
-
-    /* Conteneur vidéo en dessous du header */
+    /* L'élément data-role="page" prendra la hauteur automatique
+       de jQuery Mobile, mais on gère la zone "main" pour la vidéo. */
+    
     .video-container {
-      position: absolute;
-      top: 50px;                 /* On décale sous le header */
-      left: 0;
+      position: relative;
       width: 100%;
-      height: calc(100% - 50px); /* On occupe le reste de la fenêtre */
-      background: #000;          /* Au cas où la vidéo ne se charge pas */
+      /* On retire environ la hauteur du header + footer si nécessaire.
+         Par exemple, si le header est fixe, 
+         vous pouvez faire un calc(100vh - 40px) 
+         mais testez l'ajustement selon votre thème. */
+      height: calc(100vh - 40px);
+      background: #000; /* fond si la vidéo ne charge pas */
     }
-
-    /* Iframe qui prend tout l’espace de .video-container */
     .responsive-iframe {
       position: absolute;
       top: 0; 
@@ -56,26 +56,77 @@
       height: 100%;
       border: none;
     }
-
   </style>
 </head>
+
 <body>
 
-  <!-- Bandeau fixe en haut -->
-  <div class="header">
-    <a href="accueil.html">Home</a>
-  </div>
+<!-- ====== PAGE ====== -->
+<div data-role="page" id="page6" data-theme="a" data-dom-cache="true">
 
-  <!-- Conteneur vidéo qui occupe le reste de l’écran -->
-  <div class="video-container">
-    <iframe class="responsive-iframe"
-            src="https://www.youtube.com/embed/1waZzq5J6cI"
-            title="YouTube Short"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen>
-    </iframe>
+  <!-- ====== HEADER ====== -->
+  <div id="header" 
+       data-role="header" 
+       data-position="fixed"
+       data-fullscreen="true" 
+       data-tap-toggle="false">
+    <h1>Short YouTube</h1>
+
+    <!-- Bouton Home (icône jQuery Mobile 'home') -->
+    <a href="../../install.html"
+       data-ajax="false"
+       data-icon="home"
+       data-iconpos="notext"
+       data-shadow="false"
+       data-icon-shadow="false">
+       Home
+    </a>
+
+    <!-- Bouton Vidéo (icône Font Awesome) -->
+    <a href="page6.html"
+       data-ajax="false"
+       class="ui-btn-right" 
+       data-iconpos="notext" 
+       data-shadow="false" 
+       data-icon-shadow="false">
+      <i class="fas fa-video"></i>
+      <span class="ui-hidden-accessible">Vidéo</span>
+    </a>
   </div>
+  <!-- /header -->
+
+  <!-- ====== CONTENU PRINCIPAL ====== -->
+  <div role="main" class="ui-content" style="margin:0; padding:0;">
+    <div class="video-container">
+      <iframe 
+        class="responsive-iframe"
+        src="https://www.youtube.com/embed/1waZzq5J6cI"
+        title="YouTube Short"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen>
+      </iframe>
+    </div>
+  </div>
+  <!-- /content -->
+
+  <!-- Vous pouvez ajouter un footer jQuery Mobile si besoin -->
+  <!--
+  <div data-role="footer" data-position="fixed" data-fullscreen="true" data-tap-toggle="false" id="footer">
+    <h4>Mon Footer</h4>
+  </div>
+  -->
+
+</div><!-- /page -->
+
+<!-- ====== Script d'affichage (optionnel) ====== -->
+<script>
+  // Quand la page #page6 est affichée
+  $(document).on("pageshow", "#page6", function(){
+    // Forcer l'affichage du header si nécessaire
+    $("#header").show();
+  });
+</script>
 
 </body>
 </html>
