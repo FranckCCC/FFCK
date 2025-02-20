@@ -3,51 +3,51 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Tests arrivée</title>
-    <link rel="stylesheet" href="../../css/themes/default/jquery.mobile-1.4.5.min.css">
-    <link rel="stylesheet" href="../../_assets/css/jqm-demos.css">
-    <link rel="stylesheet" href="swipe-page.css">
-    <link rel="shortcut icon" href="../../favicon.ico">
-    <script src="../../js/jquery.js"></script>
-    <script src="../../_assets/js/index.js"></script>
-    <script src="../../js/jquery.mobile-1.4.5.min.js"></script>
-    <script src="../../swipe-page.js"></script>
-    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-    <meta http-equiv="Pragma" content="no-cache">
-    <meta http-equiv="Expires" content="0">
+    <title>Installation - Paramétrage - Dépannage</title>
+    <link rel="stylesheet" href="../css/themes/default/jquery.mobile-1.4.5.min.css">
+    <link rel="stylesheet" href="../_assets/css/jqm-demos.css">
+    <link rel="stylesheet" href="../swipe-page.css">
+    <link rel="shortcut icon" href="../favicon.ico">
+    <script src="../js/jquery.js"></script>
+    <script src="../_assets/js/index.js"></script>
+    <script src="../js/jquery.mobile-1.4.5.min.js"></script>
 </head>
 <body>
 
-<div data-role="page" id="choicePage" class="demo-page" data-title="Index" data-theme="a">
-   
+<!-- Page principale - Index -->
+<div data-role="page" id="indexPage" class="demo-page" data-title="Index" data-theme="a" >
+    <a href="../../depann.html" data-ajax="false"  style="display: flex; justify-content: center; align-items: center; margin: auto;"><img src="img/ico-home.png" alt="Home" style="width: 50px; height: auto;"></a>
     <div id="header" data-role="header" data-id="header" data-position="fixed" data-fullscreen="true" data-tap-toggle="false">
-        <h1>Test bip</h1>
-        <a href="../../depann.html" data-ajax="false" data-icon="home" data-iconpos="notext" data-shadow="false" data-icon-shadow="false">Home</a>
-      
     </div><!-- /header -->
 
     <div role="main" class="ui-content">
-        <div style="display: flex; justify-content: space-around; align-items: center; height: 80vh;">
+        <div style="display: flex; flex-direction: column; align-items: center; height: 80vh; justify-content: space-evenly;">
             <div>
-                <a href="page1c.html" data-ajax="false">
-                    <img src="img/ico-bipOK.png" alt="BIP OK" style="width: 150px; height: auto;">
-                    <h2>BIP OK</h2>
-					
+                <a href="page1.html" data-ajax="false">
+                    <img src="img/ico-bipNoBIP.png" alt="AVANT-COURSE" style="width: 350px; height: auto;">
+    
                 </a>
             </div>
             <div>
-                <a href="page1b.html" data-ajax="false">
-                    <img src="img/ico-bipNoBIP.png" alt="NO BIP" style="width: 150px; height: auto;">
-                    <h2>NO BIP</h2>
+                <a href="page2.html" data-ajax="false">
+                    <img src="img/ico-bipOK.png" alt="VERIF-WIFI" style="width: 350px; height: auto;">
+            
                 </a>
             </div>
+            <div>
+                <a href="#" data-ajax="false">
+                    <img src="img/ico-memo.png" alt="MEMO" style="width: 350px; height: auto;">
+                 
+                </a>
+            </div>
+         
         </div>
     </div><!-- /content -->
-
     <div id="footer" data-role="footer" data-id="footer" data-position="fixed" data-fullscreen="true" data-tap-toggle="false">
-        <h4>&copy; 2025 Dépannage - TEST BIP </h4>
+        <h4>&copy; 2025 Installation TRAPS</h4>
     </div><!-- /footer -->
 </div><!-- /page -->
+
 
 
 </body>
