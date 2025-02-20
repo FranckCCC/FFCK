@@ -1,44 +1,81 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="utf-8">
-    <!-- Adaptation mobile -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Short YouTube</title>
-    <!-- Style minimal pour un affichage plein écran -->
-    <style>
-        html, body {
-            margin: 0;
-            padding: 0;
-            height: 100%;
-            width: 100%;
-        }
-        .video-container {
-            position: relative;
-            width: 100%;
-            height: 100%;
-        }
-        .responsive-iframe {
-            position: absolute;
-            top: 0; 
-            left: 0;
-            width: 100%;
-            height: 100%;
-            border: none; /* Supprime la bordure par défaut de l’iframe */
-        }
-    </style>
+  <meta charset="utf-8">
+  <!-- Adaptation mobile -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Installion PCs et APs</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      width: 100%;
+    }
+
+    /* Bandeau fixe en haut */
+    .header {
+      position: fixed;       /* Reste collé en haut, même au défilement */
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 50px;         /* Hauteur du bandeau */
+      background-color: #333;
+      color: #fff;
+      display: flex;        /* Permet d'aligner facilement le contenu */
+      align-items: center;
+      padding: 0 15px;
+      box-sizing: border-box;
+      z-index: 9999;        /* Au-dessus de la vidéo */
+    }
+
+    /* Style du lien Home dans le bandeau */
+    .header a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 16px;
+    }
+
+    /* Conteneur vidéo en dessous du header */
+    .video-container {
+      position: absolute;
+      top: 50px;                 /* On décale sous le header */
+      left: 0;
+      width: 100%;
+      height: calc(100% - 50px); /* On occupe le reste de la fenêtre */
+      background: #000;          /* Au cas où la vidéo ne se charge pas */
+    }
+
+    /* Iframe qui prend tout l’espace de .video-container */
+    .responsive-iframe {
+      position: absolute;
+      top: 0; 
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+  </style>
 </head>
 <body>
 
-<div class="video-container">
+  <!-- Bandeau fixe en haut -->
+  <div class="header">
+    <a href="accueil.html">Home</a>
+  </div>
+
+  <!-- Conteneur vidéo qui occupe le reste de l’écran -->
+  <div class="video-container">
     <iframe class="responsive-iframe"
-        src="https://www.youtube.com/embed/1waZzq5J6cI"
-        title="YouTube Short"
-        frameborder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen>
+            src="https://www.youtube.com/embed/1waZzq5J6cI"
+            title="YouTube Short"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen>
     </iframe>
-</div>
+  </div>
 
 </body>
 </html>
