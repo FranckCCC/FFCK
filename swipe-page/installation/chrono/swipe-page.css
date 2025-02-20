@@ -1,10 +1,10 @@
 /* Set the background image sources */
-#page1 { background-image: url("img/chrono1.png"); }
-#page2 { background-image: url("img/chrono1b.png"); }
-#page3 { background-image: url("img/chrono2.png"); }
-#page4 { background-image: url("img/chrono2b.png"); }
-#page5 { background-image: url("img/chrono3.png"); }
-#page6 { background-image: url("img/chrono4.png"); }
+#page1 { background-image: url("img/page1.jpg"); }
+#page2 { background-image: url("img/page2.jpg"); }
+#page3 { background-image: url("img/page3.jpg"); }
+#page4 { background-image: url("img/page4.jpg"); }
+#page5 { background-image: url("img/page5.jpg"); }
+#page6 { background-image: url("img/page6.jpg"); }
 
 
 
