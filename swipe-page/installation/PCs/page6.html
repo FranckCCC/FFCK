@@ -1,49 +1,44 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8" />
-  <!-- Permet à la page de s’adapter correctement sur mobile -->
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Vidéo YouTube Plein Écran</title>
-  <style>
-    /* Annule margin/padding par défaut pour l’html et le body */
-    html, body {
-      margin: 0;
-      padding: 0;
-      width: 100%;
-      height: 100%;
-    }
-
-    /* Container qui occupe tout l’espace de l’écran */
-    .video-container {
-      position: relative;
-      width: 100%;
-      height: 100%;
-    }
-
-    /* L’iframe occupe 100% de la taille du conteneur */
-    .responsive-iframe {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      border: none; /* Supprime la bordure par défaut de l’iframe */
-    }
-  </style>
+    <meta charset="utf-8">
+    <!-- Adaptation mobile -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Short YouTube</title>
+    <!-- Style minimal pour un affichage plein écran -->
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            width: 100%;
+        }
+        .video-container {
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+        .responsive-iframe {
+            position: absolute;
+            top: 0; 
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none; /* Supprime la bordure par défaut de l’iframe */
+        }
+    </style>
 </head>
 <body>
 
-  <div class="video-container">
-    <iframe 
-      class="responsive-iframe"
-      src="https://youtube.com/shorts/1waZzq5J6cI"
-      title="Montage PCs et APs"
-      frameborder="0"
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-      allowfullscreen>
+<div class="video-container">
+    <iframe class="responsive-iframe"
+        src="https://www.youtube.com/embed/1waZzq5J6cI"
+        title="YouTube Short"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen>
     </iframe>
-  </div>
+</div>
 
 </body>
 </html>
