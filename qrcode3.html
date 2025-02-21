@@ -1,91 +1,115 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Choisir une image + QRCode</title>
-
-  <!-- jQuery Mobile CSS -->
-  <link rel="stylesheet" href="css/jquery.mobile-1.4.5.min.css">
-  <!-- jQuery + jQuery Mobile JS -->
-  <script src="js/jquery.js"></script>
-  <script src="js/jquery.mobile-1.4.5.min.js"></script>
-
-  <!-- Bibliothèque de génération QRCode (qrcodejs) -->
-  <!-- Vous pouvez l’héberger localement ou utiliser un CDN : -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
-
+  <meta charset="UTF-8" />
+  <title>Générateur de QR Code avec logo au choix</title>
+  
+  <!-- Import de la librairie QRCode.js (CDN ou local) -->
+  <script src="https://cdn.jsdelivr.net/gh/davidshimjs/qrcodejs/qrcode.min.js"></script>
+  
   <style>
-    /* Un peu de style pour la prévisualisation et le QRCode */
-    #preview {
-      display: block; 
-      margin-top: 20px; 
-      max-width: 100%;
+    body {
+      font-family: sans-serif;
+      text-align: center;
+      margin-top: 50px;
+    }
+    input[type="text"] {
+      width: 300px;
+      padding: 5px;
+    }
+    .qr-container {
+      /* Permet de positionner le logo par dessus le QR code */
+      position: relative;
+      display: inline-block;
+      margin-top: 20px;
     }
     #qrcode {
-      margin-top: 20px;
+      width: 256px;
+      height: 256px;
+    }
+    .logo {
+      /* Positionne le logo au centre absolu */
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 64px; /* Ajustez la taille du logo selon vos besoins */
+      height: 64px;
+      border-radius: 10px; /* Pour arrondir les bords (optionnel) */
+      /* Optionnel: fond blanc pour mieux distinguer le logo du code */
+      background-color: #fff; 
+      padding: 5px; 
+      box-sizing: border-box;
     }
   </style>
 </head>
 <body>
-
-<div data-role="page" id="page1">
-  <div data-role="header">
-    <h1>Choisir une image</h1>
-  </div>
-
-  <div data-role="content">
-    <!-- Liste déroulante de vos images -->
-    <label for="imageSelector">Liste des images :</label>
-    <select name="imageSelector" id="imageSelector" data-mini="true" data-native-menu="false">
-      <option value="ico-ffck-live.png">ico-ffck-live.png</option>
-      <option value="ico-ffck-live2.png">ico-ffck-live2.png</option>
-      <option value="ico-ffck-youtube.png">ico-ffck-youtube.png</option>
-      <option value="ffck.png">ffck.png</option>
-    </select>
-
-    <!-- Aperçu de l'image -->
-    <img id="preview" src="swipe-page/img/ico-ffck-live.png" alt="Aperçu" />
-
-    <!-- Conteneur pour le QR Code -->
+  <h1>Générateur de QR Code + Choix du logo</h1>
+  
+  <!-- Saisie de l'URL à encoder -->
+  <p>
+    <input type="text" id="urlInput" placeholder="Entrez votre URL..." />
+    <button onclick="genererQRCode()">Générer le QR Code</button>
+  </p>
+  
+  <!-- Liste déroulante pour choisir le logo -->
+  <label for="logoSelector">Choisissez un logo&nbsp;:</label>
+  <select id="logoSelector">
+    <!-- Mettez ici vos images réelles du dossier swipe-page/img/ -->
+    <option value="ico-ffck-youtube.png">ico-ffck-youtube.png</option>
+    <option value="ico-ffck-live.png">ico-ffck-live.png</option>
+    <option value="ico-ffck-live2.png">ico-ffck-live2.png</option>
+    <option value="ffck.png">ffck.png</option>
+  </select>
+  
+  <!-- Conteneur pour le QR code et le logo -->
+  <div class="qr-container">
+    <!-- Le QR code sera généré ici -->
     <div id="qrcode"></div>
-  </div><!-- /content -->
-</div><!-- /page -->
+    <!-- Logo par-dessus (par défaut, on en choisit un) -->
+    <img id="logoImg" src="swipe-page/img/ico-ffck-youtube.png" alt="Logo" class="logo" />
+  </div>
+  
+  <script>
+    // 1) Ecouter le changement du <select> pour modifier le logo
+    const logoSelector = document.getElementById('logoSelector');
+    const logoImg      = document.getElementById('logoImg');
 
-<script>
-  // On attend que jQuery Mobile initialise la page
-  $(document).on('pagecreate', '#page1', function() {
-
-    // 1) Créer l'instance de QRCode : on la lie à l'élément #qrcode
-    var qrcode = new QRCode(document.getElementById("qrcode"), {
-      text: "",             // On mettra à jour ultérieurement
-      width: 128,          // Largeur du QRCode
-      height: 128,         // Hauteur du QRCode
-      colorDark : "#000000",
-      colorLight : "#ffffff",
-      correctLevel : QRCode.CorrectLevel.H
+    logoSelector.addEventListener('change', () => {
+      // Met à jour la src de l'image .logo
+      logoImg.src = "swipe-page/img/" + logoSelector.value;
     });
 
-    // 2) Gérer le changement de l’image dans la liste
-    $('#imageSelector').on('change', function() {
-      // Nom du fichier sélectionné (ex: "ico-ffck-live2.png")
-      var fileName = $(this).val();
+    // 2) Fonction pour générer le QR code
+    function genererQRCode() {
+      const url = document.getElementById('urlInput').value.trim();
+      if (!url) {
+        alert("Veuillez saisir une URL valide");
+        return;
+      }
+      
+      // On vide tout d'abord le conteneur où le QR sera dessiné
+      document.getElementById('qrcode').innerHTML = "";
+      
+      // Génération du QR code (avec un niveau de correction élevé = H)
+      new QRCode(document.getElementById('qrcode'), {
+        text: url,
+        width: 256,
+        height: 256,
+        colorDark : "#000000",
+        colorLight : "#ffffff",
+        correctLevel : QRCode.CorrectLevel.H
+      });
 
-      // Met à jour l’aperçu de l’image
-      var imagePath = "swipe-page/img/" + fileName;
-      $('#preview').attr('src', imagePath);
+      // Le logo surimposé ne change pas automatiquement le code,
+      // c’est la propriété "correctLevel" du QR Code qui permet
+      // qu’une petite zone centrale soit masquée sans empêcher la lecture.
+      // Si vous changez le logo après coup, ce n’est pas un problème,
+      // tant qu’il n’est pas trop grand.
+    }
 
-      // Met à jour le contenu du QRCode avec l'URL de cette image
-      // (ou tout autre lien que vous souhaitez encoder)
-      qrcode.makeCode(imagePath);
-    });
-
-    // 3) Initialiser le QRCode avec l’image par défaut
-    // (qui correspond à la valeur sélectionnée par défaut)
-    var defaultImage = "swipe-page/img/" + $('#imageSelector').val();
-    qrcode.makeCode(defaultImage);
-  });
-</script>
-
+    // 3) Initialisation : on met un logo par défaut dans le select
+    //   (optionnel : on peut générer un premier code dès le chargement)
+  </script>
 </body>
 </html>
