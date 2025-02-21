@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <title>Générateur de QR Code</title>
+  <!-- Import de la librairie QRCode.js (CDN ou local) -->
+  <script src="https://cdn.jsdelivr.net/gh/davidshimjs/qrcodejs/qrcode.min.js"></script>
+  
+  <style>
+    body {
+      font-family: sans-serif;
+      text-align: center;
+      margin-top: 50px;
+    }
+    .qr-container {
+      /* Permet de positionner le logo par dessus le QR code */
+      position: relative;
+      display: inline-block;
+    }
+    #qrcode {
+      width: 256px;
+      height: 256px;
+    }
+    .logo {
+      /* Positionne le logo au centre absolu */
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 64px; /* Ajustez la taille du logo selon vos besoins */
+      height: 64px;
+      border-radius: 10px; /* Pour éventuellement arrondir les bords */
+      /* Optionnel: pour un fond blanc autour du logo afin de mieux le détacher 
+         du QR code (augmenter la lisibilité lors du scan) */
+      background-color: #fff; 
+      padding: 5px; 
+      box-sizing: border-box;
+    }
+    input[type="text"] {
+      width: 300px;
+      padding: 5px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Générateur de QR Code</h1>
+  
+  <!-- Champ pour entrer l'URL -->
+  <input type="text" id="urlInput" placeholder="Entrez votre URL..." />
+  <button onclick="genererQRCode()">Générer le QR Code</button>
+  
+  <!-- Conteneur qui regroupe le QR code et le logo -->
+  <div class="qr-container">
+    <!-- Conteneur où le QR Code sera généré -->
+    <div id="qrcode"></div>
+    <!-- Image du logo superposée par-dessus le QR code -->
+    <img src="swipe-page/img/ffck.png" alt="Logo" class="logo" />
+  </div>
+  
+  <script>
+    function genererQRCode() {
+      const url = document.getElementById('urlInput').value.trim();
+      if (!url) {
+        alert("Veuillez saisir une URL valide");
+        return;
+      }
+      
+      // On vide le QR code généré précédemment
+      document.getElementById('qrcode').innerHTML = "";
+      
+      // Génération du QR code avec un niveau de correction élevé (H)
+      // pour mieux tolérer la zone masquée par le logo
+      new QRCode(document.getElementById('qrcode'), {
+        text: url,
+        width: 256,
+        height: 256,
+        colorDark: "#000000",
+        colorLight: "#ffffff",
+        correctLevel: QRCode.CorrectLevel.H
+      });
+    }
+  </script>
+</body>
+</html>
