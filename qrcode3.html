@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Choisir une image + QRCode</title>
+
+  <!-- jQuery Mobile CSS -->
+  <link rel="stylesheet" href="css/jquery.mobile-1.4.5.min.css">
+  <!-- jQuery + jQuery Mobile JS -->
+  <script src="js/jquery.js"></script>
+  <script src="js/jquery.mobile-1.4.5.min.js"></script>
+
+  <!-- Bibliothèque de génération QRCode (qrcodejs) -->
+  <!-- Vous pouvez l’héberger localement ou utiliser un CDN : -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+
+  <style>
+    /* Un peu de style pour la prévisualisation et le QRCode */
+    #preview {
+      display: block; 
+      margin-top: 20px; 
+      max-width: 100%;
+    }
+    #qrcode {
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+
+<div data-role="page" id="page1">
+  <div data-role="header">
+    <h1>Choisir une image</h1>
+  </div>
+
+  <div data-role="content">
+    <!-- Liste déroulante de vos images -->
+    <label for="imageSelector">Liste des images :</label>
+    <select name="imageSelector" id="imageSelector" data-mini="true" data-native-menu="false">
+      <option value="ico-ffck-live.png">ico-ffck-live.png</option>
+      <option value="ico-ffck-live2.png">ico-ffck-live2.png</option>
+      <option value="ico-ffck-youtube.png">ico-ffck-youtube.png</option>
+      <option value="ffck.png">ffck.png</option>
+    </select>
+
+    <!-- Aperçu de l'image -->
+    <img id="preview" src="swipe-page/img/ico-ffck-live.png" alt="Aperçu" />
+
+    <!-- Conteneur pour le QR Code -->
+    <div id="qrcode"></div>
+  </div><!-- /content -->
+</div><!-- /page -->
+
+<script>
+  // On attend que jQuery Mobile initialise la page
+  $(document).on('pagecreate', '#page1', function() {
+
+    // 1) Créer l'instance de QRCode : on la lie à l'élément #qrcode
+    var qrcode = new QRCode(document.getElementById("qrcode"), {
+      text: "",             // On mettra à jour ultérieurement
+      width: 128,          // Largeur du QRCode
+      height: 128,         // Hauteur du QRCode
+      colorDark : "#000000",
+      colorLight : "#ffffff",
+      correctLevel : QRCode.CorrectLevel.H
+    });
+
+    // 2) Gérer le changement de l’image dans la liste
+    $('#imageSelector').on('change', function() {
+      // Nom du fichier sélectionné (ex: "ico-ffck-live2.png")
+      var fileName = $(this).val();
+
+      // Met à jour l’aperçu de l’image
+      var imagePath = "swipe-page/img/" + fileName;
+      $('#preview').attr('src', imagePath);
+
+      // Met à jour le contenu du QRCode avec l'URL de cette image
+      // (ou tout autre lien que vous souhaitez encoder)
+      qrcode.makeCode(imagePath);
+    });
+
+    // 3) Initialiser le QRCode avec l’image par défaut
+    // (qui correspond à la valeur sélectionnée par défaut)
+    var defaultImage = "swipe-page/img/" + $('#imageSelector').val();
+    qrcode.makeCode(defaultImage);
+  });
+</script>
+
+</body>
+</html>
